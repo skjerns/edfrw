@@ -199,12 +199,7 @@ The slope can be calculated as::
     m = (y1 - y0) / (x1 - x0)
     m = (physical_max - physical_min) / (digital_max - digital_min)
 
-and the offset (or intercept) *b* will be the physical_min value. From
-these the physical values can be obtained using  the line equation::
-
-    b = offset = physical_min
-    y = m * x + b
-    physical_value = (m * digital_value) + b
+The offset (or intercept) *b* will always be 0. 
 
 Example 1.
     An EDF file contains data obtained after measuring voltage with the
@@ -229,7 +224,7 @@ Example 1.
 
     and with that the physical values (voltage)::
 
-        physical_value = (m * digital_value) + physical_min
+        physical_value = (m * digital_value) + 0
         physical_value = (0.0008 * digital_value) + 0
 
     A digital value of 2048 will represent (0.0008 * 2048) + 0 = 1.65
